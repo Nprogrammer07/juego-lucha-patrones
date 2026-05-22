@@ -12,4 +12,6 @@
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/abstractfactory/FabricaOscura.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/abstractfactory/FaccionFactory.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/builder/PersonajeBuilder.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/decorator/EspadaFuegoDecorator.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/decorator/PersonajeDecorator.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/factory/EnemigoFactory.java

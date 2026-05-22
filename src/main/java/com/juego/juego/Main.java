@@ -17,6 +17,10 @@ import com.juego.patrones.abstractfactory.FabricaOscura;
 // Importación del Builder
 import com.juego.patrones.builder.PersonajeBuilder;
 
+// Import del Decorator
+import com.juego.patrones.decorator.EspadaFuegoDecorator;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -37,6 +41,15 @@ public class Main {
         System.out.println("[HÉROE PERSONALIZADO]: " + heroePersonalizado.getNombre());
         
         System.out.println("[HÉROE CREADO POR FÁBRICA]: " + heroePersonalizado.getNombre() + " con " + heroePersonalizado.getPuntosDeVida() + " HP.\n");
+
+        Personaje heroe = new PersonajeBuilder()
+            .conNombre("Zeus")
+            .conVida(300)
+            .build();
+
+        heroe = new EspadaFuegoDecorator(heroe);
+
+        System.out.println("EQUIPAMIENTO: " + heroe.getNombre() + " ha equipado la Espada de Fuego.");
 
         // 3. USO DEL PATRÓN 1: FACTORY METHOD
         // La fábrica se encarga de decidir qué subclase instanciar

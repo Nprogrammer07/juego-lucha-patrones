@@ -1,4 +1,6 @@
+com/juego/patrones/decorator/PersonajeDecorator.class
 com/juego/model/Personaje.class
+com/juego/patrones/decorator/EspadaFuegoDecorator.class
 com/juego/patrones/abstractfactory/FabricaLuz.class
 com/juego/model/MagoBlanco.class
 com/juego/model/ArqueroInmortal.class
