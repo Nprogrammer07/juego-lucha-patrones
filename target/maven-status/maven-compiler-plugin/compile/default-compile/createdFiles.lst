@@ -1,1 +1,5 @@
+com/juego/model/JefeDragon.class
 com/juego/model/Personaje.class
+com/juego/main/Main.class
+com/juego/model/JefeSupermutante.class
+com/juego/patrones/factory/EnemigoFactory.class

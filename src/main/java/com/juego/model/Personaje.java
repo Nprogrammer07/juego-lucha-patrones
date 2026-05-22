@@ -4,14 +4,23 @@ import java.util.Random;
 
 public class Personaje {
     private String nombre;
-    private int puntosDeVida;
+    protected int puntosDeVida;
+    protected Random rand;
     private final int MAX_DANO = 30;
     private final int MIN_DANO = 10;
-    private Random rand;
 
     public Personaje(String nombre){
         this.nombre = nombre;
-        this.puntosDeVida = 100;
+        this.puntosDeVida = 150;
+        this.rand = new Random();
+    }
+
+
+    // Constructor hecho para crear a los jefes con sus propios atributos.
+
+    public Personaje(String nombre, int puntosDeVida){
+        this.nombre = nombre;
+        this.puntosDeVida = puntosDeVida;
         this.rand = new Random();
     }
 

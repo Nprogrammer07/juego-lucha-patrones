@@ -4,41 +4,50 @@ import java.util.Random;
 
 public class Personaje {
     private String nombre;
-    private int puntosDeVida;
-<span class="fc" id="L8">    private final int MAX_DANO = 30;</span>
-<span class="fc" id="L9">    private final int MIN_DANO = 10;</span>
-    private Random rand;
+    protected int puntosDeVida;
+    protected Random rand;
+<span class="fc" id="L9">    private final int MAX_DANO = 30;</span>
+<span class="fc" id="L10">    private final int MIN_DANO = 10;</span>
 
 <span class="fc" id="L12">    public Personaje(String nombre){</span>
 <span class="fc" id="L13">        this.nombre = nombre;</span>
-<span class="fc" id="L14">        this.puntosDeVida = 100;</span>
+<span class="fc" id="L14">        this.puntosDeVida = 150;</span>
 <span class="fc" id="L15">        this.rand = new Random();</span>
 <span class="fc" id="L16">    }</span>
 
+
+    // Constructor hecho para crear a los jefes con sus propios atributos.
+
+<span class="fc" id="L21">    public Personaje(String nombre, int puntosDeVida){</span>
+<span class="fc" id="L22">        this.nombre = nombre;</span>
+<span class="fc" id="L23">        this.puntosDeVida = puntosDeVida;</span>
+<span class="fc" id="L24">        this.rand = new Random();</span>
+<span class="fc" id="L25">    }</span>
+
     public void atacar(Personaje oponente){
-<span class="fc" id="L19">        int dano = rand.nextInt(MAX_DANO - MIN_DANO + 1) + MIN_DANO;</span>
-<span class="fc" id="L20">        oponente.recibirDano(dano);</span>
-<span class="fc" id="L21">        System.out.println(this.nombre + &quot; ataca a &quot; + oponente.getNombre() + &quot; causando &quot; + dano + &quot; puntos de daño.&quot;);</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L28">        int dano = rand.nextInt(MAX_DANO - MIN_DANO + 1) + MIN_DANO;</span>
+<span class="fc" id="L29">        oponente.recibirDano(dano);</span>
+<span class="fc" id="L30">        System.out.println(this.nombre + &quot; ataca a &quot; + oponente.getNombre() + &quot; causando &quot; + dano + &quot; puntos de daño.&quot;);</span>
+<span class="fc" id="L31">    }</span>
 
     public void recibirDano(int dano){
-<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if (dano &lt; 0) return;</span>
-<span class="fc" id="L26">        this.puntosDeVida -= dano;</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (this.puntosDeVida &lt; 0){</span>
-<span class="fc" id="L28">            this.puntosDeVida = 0;</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (dano &lt; 0) return;</span>
+<span class="fc" id="L35">        this.puntosDeVida -= dano;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (this.puntosDeVida &lt; 0){</span>
+<span class="fc" id="L37">            this.puntosDeVida = 0;</span>
         }
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L39">    }</span>
 
     public boolean estaVivo(){
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        return this.puntosDeVida &gt; 0;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        return this.puntosDeVida &gt; 0;</span>
     }
 
     public String getNombre(){
-<span class="fc" id="L37">        return this.nombre;</span>
+<span class="fc" id="L46">        return this.nombre;</span>
     }
 
     public int getPuntosDeVida(){
-<span class="fc" id="L41">        return this.puntosDeVida;</span>
+<span class="fc" id="L50">        return this.puntosDeVida;</span>
     }
 
 

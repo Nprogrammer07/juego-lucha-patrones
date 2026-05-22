@@ -13,10 +13,10 @@ class PersonajeTest{
     }
 
     @Test 
-    @DisplayName("Debe crear personaje con 100HP")
+    @DisplayName("Debe crear personaje con 150HP")
     void testCreacionPersonaje(){
         assertEquals("Thor", guerrero.getNombre());
-        assertEquals(100, guerrero.getPuntosDeVida());
+        assertEquals(150, guerrero.getPuntosDeVida());
         assertTrue(guerrero.estaVivo());
     }
 
@@ -24,13 +24,13 @@ class PersonajeTest{
     @DisplayName("Debe reducir HP al recibir daño")
     void testRecibirDano(){
         guerrero.recibirDano(30);
-        assertEquals(70, guerrero.getPuntosDeVida());
+        assertEquals(120, guerrero.getPuntosDeVida());
     }
 
     @Test
     @DisplayName("HP no debe ser negativo")
     void testHpNoNegativo(){
-        guerrero.recibirDano(150);
+        guerrero.recibirDano(200);
         assertEquals(0, guerrero.getPuntosDeVida());
         assertFalse(guerrero.estaVivo());
     }
