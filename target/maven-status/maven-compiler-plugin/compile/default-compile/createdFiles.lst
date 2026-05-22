@@ -2,6 +2,7 @@ com/juego/model/Personaje.class
 com/juego/patrones/abstractfactory/FabricaLuz.class
 com/juego/model/MagoBlanco.class
 com/juego/model/ArqueroInmortal.class
+com/juego/patrones/builder/PersonajeBuilder.class
 com/juego/model/JefeDragon.class
 com/juego/patrones/abstractfactory/FaccionFactory.class
 com/juego/model/JefeSupermutante.class

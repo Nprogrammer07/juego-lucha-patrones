@@ -14,6 +14,9 @@ import com.juego.patrones.abstractfactory.FaccionFactory;
 import com.juego.patrones.abstractfactory.FabricaLuz;
 import com.juego.patrones.abstractfactory.FabricaOscura;
 
+// Importación del Builder
+import com.juego.patrones.builder.PersonajeBuilder;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -25,41 +28,45 @@ public class Main {
         // En lugar de "new Personaje", elegimos una fábrica (esto simula la elección de facción del jugador)
         FaccionFactory miFaccion = new FabricaOscura(); 
         
-        // El héroe ahora es creado por la fábrica. 
-        // Nota: Como la fábrica devuelve "Mago", y Mago extiende de Personaje, esto es correcto.
-        Personaje heroe = miFaccion.crearMago("Sauron el Oscuro");
-        
-        System.out.println("[HÉROE CREADO POR FÁBRICA]: " + heroe.getNombre() + " con " + heroe.getPuntosDeVida() + " HP.\n");
+        // 2. USO DEL PATRON BUILDER
+        Personaje heroePersonalizado = new PersonajeBuilder()
+            .conNombre("Thor el Valiente")
+            .conVida(250)
+            .build();
 
-        // 2. USO DEL PATRÓN 1: FACTORY METHOD
+        System.out.println("[HÉROE PERSONALIZADO]: " + heroePersonalizado.getNombre());
+        
+        System.out.println("[HÉROE CREADO POR FÁBRICA]: " + heroePersonalizado.getNombre() + " con " + heroePersonalizado.getPuntosDeVida() + " HP.\n");
+
+        // 3. USO DEL PATRÓN 1: FACTORY METHOD
         // La fábrica se encarga de decidir qué subclase instanciar
         System.out.println("--- ¡UN JEFE HA APARECIDO EN LA MAZMORRA! ---");
         Personaje jefe = EnemigoFactory.crearEnemigo("DRAGON", "Smaug el Terrible");
         System.out.println("[JEFE APARECIDO]: " + jefe.getNombre() + " con " + jefe.getPuntosDeVida() + " HP.\n");
 
-        // 3. SIMULACIÓN DE COMBATE CORTO (Bucle de turnos simple)
+        // 4. SIMULACIÓN DE COMBATE CORTO (Bucle de turnos simple)
         System.out.println("--- INICIA EL COMBATE POR TURNOS ---");
         int ronda = 1;
 
-        while (heroe.estaVivo() && jefe.estaVivo() && ronda <= 3) {
+        while (heroePersonalizado.estaVivo() && jefe.estaVivo() && ronda <= 3) {
             System.out.println("\n--- Ronda " + ronda + " ---");
             
             // Turno del héroe
-            heroe.atacar(jefe);
+            heroePersonalizado.atacar(jefe);
             
             // Verificar si el jefe sigue vivo antes de que contraataque
             if (jefe.estaVivo()) {
-                jefe.atacar(heroe);
+                jefe.atacar(heroePersonalizado);
             }
             
             ronda++;
         }
 
-        // 4. RESULTADO DE LA SIMULACIÓN
+        // 5. RESULTADO DE LA SIMULACIÓN
         System.out.println("\n=========================================");
         System.out.println("      ESTADO FINAL DE LA SIMULACIÓN      ");
         System.out.println("=========================================");
-        System.out.println(heroe.getNombre() + ": " + (heroe.estaVivo() ? heroe.getPuntosDeVida() + " HP" : "DEFEATED"));
+        System.out.println(heroePersonalizado.getNombre() + ": " + (heroePersonalizado.estaVivo() ? heroePersonalizado.getPuntosDeVida() + " HP" : "DEFEATED"));
         System.out.println(jefe.getNombre() + ": " + (jefe.estaVivo() ? jefe.getPuntosDeVida() + " HP" : "DEFEATED"));
         System.out.println("=========================================");
     }

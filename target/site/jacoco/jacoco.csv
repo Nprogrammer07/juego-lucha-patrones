@@ -1,6 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 juego-lucha,com.juego.patrones.factory,EnemigoFactory,3,23,0,4,1,5,1,3,1,1
-juego-lucha,com.juego.main,Main,109,0,12,0,25,0,8,0,2,0
+juego-lucha,com.juego.main,Main,119,0,12,0,29,0,8,0,2,0
+juego-lucha,com.juego.patrones.builder,PersonajeBuilder,0,27,0,0,0,8,0,4,0,4
 juego-lucha,com.juego.model,Arquero,0,5,0,0,0,2,0,1,0,1
 juego-lucha,com.juego.model,JefeDragon,16,5,0,0,3,2,1,1,1,1
 juego-lucha,com.juego.model,ArqueroElite,15,8,0,0,4,3,1,1,1,1
