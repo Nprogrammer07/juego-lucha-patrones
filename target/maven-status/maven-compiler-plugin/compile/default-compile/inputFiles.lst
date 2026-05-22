@@ -1,5 +1,14 @@
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/juego/Main.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Arquero.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/ArqueroElite.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/ArqueroInmortal.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/model/JefeDragon.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/model/JefeSupermutante.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Mago.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/MagoBlanco.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/model/MagoOscuro.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/model/Personaje.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/abstractfactory/FabricaLuz.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/abstractfactory/FabricaOscura.java
+/workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/abstractfactory/FaccionFactory.java
 /workspaces/juego-lucha-patrones/src/main/java/com/juego/patrones/factory/EnemigoFactory.java

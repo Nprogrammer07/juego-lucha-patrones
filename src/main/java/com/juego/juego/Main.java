@@ -9,16 +9,27 @@ import com.juego.patrones.factory.EnemigoFactory;
 import com.juego.model.Personaje;
 import com.juego.patrones.factory.EnemigoFactory;
 
+// Importación de Abstract Factory
+import com.juego.patrones.abstractfactory.FaccionFactory;
+import com.juego.patrones.abstractfactory.FabricaLuz;
+import com.juego.patrones.abstractfactory.FabricaOscura;
+
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("=========================================");
         System.out.println("   BIENVENIDO AL JUEGO DE LUCHA RPG     ");
         System.out.println("=========================================\n");
 
-        // 1. Creamos al héroe usando el constructor base por ahora
-        // (Luego aquí usaremos el patrón Builder)
-        Personaje heroe = new Personaje("Thor");
-        System.out.println("[HÉROE CREADO]: " + heroe.getNombre() + " con " + heroe.getPuntosDeVida() + " HP.\n");
+        // 1. INTEGRACIÓN ABSTRACT FACTORY
+        // En lugar de "new Personaje", elegimos una fábrica (esto simula la elección de facción del jugador)
+        FaccionFactory miFaccion = new FabricaOscura(); 
+        
+        // El héroe ahora es creado por la fábrica. 
+        // Nota: Como la fábrica devuelve "Mago", y Mago extiende de Personaje, esto es correcto.
+        Personaje heroe = miFaccion.crearMago("Sauron el Oscuro");
+        
+        System.out.println("[HÉROE CREADO POR FÁBRICA]: " + heroe.getNombre() + " con " + heroe.getPuntosDeVida() + " HP.\n");
 
         // 2. USO DEL PATRÓN 1: FACTORY METHOD
         // La fábrica se encarga de decidir qué subclase instanciar

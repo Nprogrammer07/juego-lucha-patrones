@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EnemigoFactoryTest {
 
+    // Testing del patrón Factory 
+
     @Test
     @DisplayName("Debe crear un JefeDragon correctamente")
     void testCrearDragon(){
